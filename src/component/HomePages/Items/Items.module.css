@@ -47,10 +47,10 @@
 }
 
 .card>div {
-  width: 10rem;
+  width: 15rem;
   display: flex;
   flex-direction: row;
-  background-color:rgb(46, 122, 116);
+ background-color: aliceblue;
   border-radius: 10px;
   position: relative;
   overflow: hidden;
@@ -61,21 +61,16 @@
   font-family: "Roboto", sans-serif;
   text-align: center;
   font-weight: bold;
-  background-color:rgb(160, 207, 203);
+
 
 }
+
+
 
 .left>div:nth-child(2) {
-  color: rgb(168, 162, 162);
-  text-align: center;
-  font-weight: bold;
-
-}
-
-.left>div:nth-child(3) {
   font-size: xx-large;
   font-weight: bold;
-  padding-bottom: 1rem;
+  padding: 1rem;
 }
 
 .left>button {
@@ -84,7 +79,9 @@
   border-radius: 1rem;
   background-color:rgb(160, 207, 203);
 }
-
+.left>button:hover {
+  cursor: pointer;
+}
 .left {
   flex: 1;
   padding: 10PX;
@@ -103,13 +100,13 @@
 }
 .right>img {
   position: absolute;
-  transform: rotate(-20deg);
+  
   width: 40%;
   height: 100%;
   right: 0;
   left: 65%;
   top: 20%;
-
+background:aliceblue;
 }
 
 .cardright {

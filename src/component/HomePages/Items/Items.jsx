@@ -1,14 +1,29 @@
 import Istyle from "../Items/Items.module.css";
-import { ProductsData } from "../Swiperslide/products";
-import { useState } from "react";
+import Hero from "../Hero/Hero.jsx"
+
+import { useState,useEffect } from "react";
+
 
 const Item = () => {
-    const [data, setData] = useState(ProductsData);
+    const [data, setData] = useState([]);
 
     const filter = (type) => {
         setData(ProductsData.filter((p)=>(p.type==type)))
     };
-
+   useEffect(()=>{
+    const make=async()=>{
+        try {
+            
+        const fetchdata = await fetch(`https://makeup-api.herokuapp.com/api/v1/products.json`);
+       
+            const response = await fetchdata.json();
+            setData(response);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    make();
+   },[])
     return (
         <div className={Istyle.box}>
             <div className={Istyle.head}>
@@ -30,12 +45,11 @@ const Item = () => {
                             <div>
                                 <div className={Istyle.left}>
                                     <div>{product.name}</div>
-                                    <div>{product.type}</div>
-                                    <div>{product.price} $</div>
-                                    <button>show</button>
+                                    <div>{product.price}{product.price_sign}</div>
+                                    <button onClick={()=>{<Hero/>}}>show</button>
                                 </div>
                                 <div className={Istyle.right}>
-                                    <img src={product.img} alt={product.name} />
+                                     <img src={product.api_featured_image}></img>
                                 </div>
                             </div>
                         </div>
