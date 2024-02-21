@@ -16,7 +16,7 @@ const Nav = () => {
                 <img src={Logo} alt="Logo"></img>
             </div>
             <button className={Navstyle.hamburger} onClick={toggleMenu}>
-                ☰
+              {show ?   "=" : "☰"}
             </button>
             <BrowserRouter>
                 <div className={`${Navstyle.navcontainer} ${show ? Navstyle.show : ''}`}>
