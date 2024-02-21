@@ -1,0 +1,126 @@
+.box {
+    background-color: rgb(46, 122, 116);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:  2rem;
+}
+.top{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+.left>span:nth-child(1) {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+.left>span:nth-child(2) {
+    font-size: small;
+}
+.right>span:nth-child(1) {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: xx-large;
+}
+.right>span:nth-child(2) {
+    font-size: small;
+}
+.midle>img{
+     width: 30rem;
+}
+.bottom{
+    width: 100%;
+ 
+}
+.review{
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    text-transform: uppercase;
+    padding: 4rem 0rem;
+   display: flex;
+   flex-direction: column;
+  
+}
+.review>div{
+    display: flex;
+    
+    height: 1%;
+
+    width: 10%;
+    border: 1px solid rgb(230, 238, 241);
+}
+.l{
+   width: 100%;
+  
+}
+.cardin{
+    width: 80%;
+    margin-left:3rem ;
+    background-color:aliceblue;
+    border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ box-shadow: 1rem 0rem 0rem rgb(138, 190, 182),-1rem -0rem -0rem rgb(138, 190, 182);
+}
+.name{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem;
+}
+.comment{
+    background: linear-gradient( rgb(115, 196, 185),rgb(46, 122, 116));
+    text-align: center;
+    padding: 1rem;
+    font-size: large;
+    margin: 0px 10px;
+    border-radius: 1rem;
+}
+.cardin>img{
+    background: linear-gradient( rgb(201, 195, 186),rgb(46, 122, 116));
+    width: 4rem;
+    height: 4rem;
+   padding: 0.5rem;
+   margin: 5px 0px;
+    border-radius: 100%;
+}
+@media screen and (max-width:655px){
+    .top{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    
+    }
+    .right{
+        grid-column: 1/4;
+        align-self: center;
+        justify-self: center;
+        
+    }
+    .left{
+        grid-column: 1/-1;
+    }
+    .midle>img{
+        
+        margin-left:1rem ;
+        width: 15rem;
+       
+   }
+}

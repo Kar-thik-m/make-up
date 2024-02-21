@@ -1,0 +1,83 @@
+
+
+.aling {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 0rem;
+}
+.scard {
+  width: 100%;
+  background-color: rgb(46, 122, 116);
+  height: 30vh;
+}
+.card{
+  padding-left: 20px;
+  
+  
+}
+.card >div{
+  box-shadow: 7px 0rem 0rem rgb(138, 190, 182),-7px -0rem -0rem rgb(138, 190, 182);
+ width: 90%;
+ margin-left: -5%;
+  display: flex;
+  flex-direction: row;
+  background-color:rgb(149, 211, 206);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.l {
+  width: 70%;
+}
+.left>div:nth-child(1){
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-weight: bold;
+  background-color:rgb(82, 194, 184);
+
+}
+.left>div:nth-child(2){
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: bold;
+ 
+}
+.left>div:nth-child(3){
+font-size: xx-large;
+  font-weight: bold;
+ padding-bottom: 1rem;
+}
+.left>button{
+    padding: 1px 20px;
+    border: none;
+    border-radius: 1rem;
+    background-color:rgb(82, 194, 184);
+}
+.left {
+  flex: 1;
+ padding: 10PX;
+ 
+}
+
+.right {
+  flex: 1;
+  
+
+
+  bottom:-20% ;
+}
+
+.right > img {
+  position: absolute;
+  transform: rotate(-20deg);
+  width: 40%;
+  height: 100%;
+  right: 0;
+  left: 65%;
+ top: 20%;
+ 
+}
+

@@ -1,0 +1,88 @@
+
+
+export const ProductsData = [
+    {
+        name: 'SKIN',
+        detail: 'Super Skin Care',
+        price: '25',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    {
+        name: 'SKIN',
+        detail: 'Super Skin Care',
+        price: '25',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    {
+        name: 'SKIN',
+        detail: 'Super Skin Care',
+        price: '25',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    {
+        name: 'SKIN',
+        detail: 'Super Skin Care',
+        price: '25',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    {
+        name: 'SKIN',
+        detail: 'Super Skin Care',
+        price: '25',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    {
+        name: 'SKIN',
+        detail: 'Super Skin Care',
+        price: '25',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    {
+        name: 'SKIN',
+        detail: 'Super Skin Care',
+        price: '25',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    {
+        name: 'SKIN',
+        detail: 'Super Skin Care',
+        price: '25',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    {
+        name: 'SKIN',
+        detail: 'Super Skin Care',
+        price: '25',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    {
+        name: 'SKIN',
+        detail: 'Super Skin Care',
+        price: '25',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    {
+        name: 'SKI',
+        detail: 'Super Skin Care',
+        price: '22',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    {
+        name: 'SKIN',
+        detail: 'Super Skin Care',
+        price: '20',
+        img: "https://amazon-3l2.pages.dev/static/media/img1.43539ffb398f19f18433.png",
+        type: 'skin care',
+    },
+    ]
