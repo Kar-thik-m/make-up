@@ -28,7 +28,7 @@
 }
 
 .cardleft>ul>li {
-  padding: 1rem 0rem;
+  padding: 10px 0rem;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   list-style-type: none;
@@ -47,7 +47,7 @@
 }
 
 .card>div {
-  width: 15rem;
+  width: 10rem;
   display: flex;
   flex-direction: row;
  background-color: aliceblue;
@@ -148,5 +148,6 @@ background:aliceblue;
     width: 15rem;
     
   }
+ 
   
 }

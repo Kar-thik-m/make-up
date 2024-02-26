@@ -1,7 +1,11 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+
+
 import Logo from "../../../assets/logo.png"
 import Navstyle from "./Nav.module.css"
 import { useState } from "react";
+import Home from "../HomePage";
+import Category from "../../Category/category";
 
 const Nav = () => {
     const [show, setShow] = useState(false);
@@ -11,33 +15,38 @@ const Nav = () => {
     };
 
     return (
-        <div className={Navstyle.navcard}>
-            <div className={Navstyle.logo}>
-                <img src={Logo} alt="Logo"></img>
-            </div>
-            <button className={Navstyle.hamburger} onClick={toggleMenu}>
-              {show ?   "=" : "☰"}
-            </button>
+        <>
+
             <BrowserRouter>
-                <div className={`${Navstyle.navcontainer} ${show ? Navstyle.show : ''}`}>
-                    <Link to="/">Home</Link>
-                    <Link to="/items/i">i</Link>
-                    <Link to="/items/k">k</Link>
-                    <Link to="/items/l">l</Link>
-                    <Link to="/items/kk">kk</Link>
+                <div className={Navstyle.navcard}>
+                    <div className={Navstyle.logo}>
+                        <img src={Logo} alt="Logo"></img>
+                    </div>
+                    <button className={Navstyle.hamburger} onClick={toggleMenu}>
+                        {show ? "=" : "☰"}
+                    </button>
+                    <div className={`${Navstyle.navcontainer} ${show ? Navstyle.show : ''}`}>
+                        <Link to="/items/home">Home</Link><hr />
+                        <Link to="/items/i">Catagorey</Link><hr />
+                        <Link to="/items/k">Orders</Link><hr />
+                        <Link to="/items/l">Items</Link><hr />
+                        <Link to="/items/kk">Card</Link>
+                    </div>
                 </div>
                 <Routes>
-                    <Route index path="/" element="" />
+                    <Route index path="" element={<Home />} />
                     <Route path="items" >
-                        <Route path="i" element="" />
+                    <Route path="home" element={<Home />} />
+                        <Route path="i" element={<Category/>} />
                         <Route path="k" element="" />
                         <Route path="l" element="" />
                         <Route path="kk" element="" />
+                    
                     </Route>
                     <Route path="*" element={<div>Not Found</div>} />
                 </Routes>
             </BrowserRouter>
-        </div>
+        </>
     );
 }
 

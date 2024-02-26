@@ -1,0 +1,97 @@
+.full {
+  width: 100%;
+  display: flex;
+  background: linear-gradient(rgb(48, 138, 130), rgb(46, 122, 116));
+
+}
+
+.leftsideFilter {
+  width: 10%;
+  position: sticky;
+  overflow: auto;
+  height: 100vh;
+  top: 0;
+  background: linear-gradient(rgb(48, 138, 130), rgb(46, 122, 116));
+
+}
+
+.leftsideFilter>div {
+  padding: 1rem 1rem;
+  width: 5rem;
+}
+
+.box {
+
+  position: relative;
+  left: 4%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  width: 80%
+}
+
+
+
+.card>div {
+  width: 18rem;
+  display: flex;
+  flex-direction: row;
+ background-color: aliceblue;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem;
+}
+.left>div:nth-child(1) {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-weight: bold;
+
+  background-color: rgb(42, 163, 163);
+}
+.left>div:nth-child(2) {
+  font-size: large;
+  font-weight: bold;
+  padding: 1rem 0rem 2rem 0rem;
+  
+}
+.left>div:nth-child(3) {
+  font-size:xx-large;
+  font-weight: bold;
+  padding: 1rem;
+}
+.button {
+ gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.button>button {
+  padding: 1px 10px;
+  border: none;
+  width: 7rem;
+  border-radius: 1rem;
+  background-color:rgb(84, 165, 158);
+}
+.left>button:hover {
+  cursor: pointer;
+}
+.left { 
+  padding: 10PX;
+}
+.right {
+
+  bottom: -15%;
+ 
+}
+
+.right>img {
+  position: absolute;
+  
+  width: 40%;
+  height: 100%;
+  right: 0;
+  left: 60%;
+  top: 30%;
+background:aliceblue;
+}
+

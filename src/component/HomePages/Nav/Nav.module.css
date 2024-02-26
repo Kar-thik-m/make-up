@@ -4,10 +4,13 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(46, 122, 116);
-  
+ 
+}
+.navcontainer>hr{
+  display:none;
 }
 .navcontainer{
-   width: 50%;
+   width: 100%;
    display: flex;
     justify-content: space-evenly;
     
@@ -36,7 +39,7 @@
   .navcontainer>a:hover {
     color: aliceblue;
     cursor: pointer;
-  
+    
   }
   @media screen and (max-width: 653px) {
     .navcard{
@@ -55,11 +58,14 @@
     }
     .show {
       display: block; 
-      width: 5rem;
-      background-color: rgb(46, 122, 116);
+      padding: px;
+      width: fit-content;
+      background-color: rgb(92, 146, 142);
       position: absolute;
-      right: 1rem;
+      right: 2rem;
+      border-radius: 1rem;
       top: 5rem;
+      border: 1px solid rgb(255, 254, 254);
     }
     
     .hamburger {
@@ -77,5 +83,8 @@
      text-align: center;
       text-decoration: none;
       color: black;
+    }
+    .navcontainer>hr{
+      display:block;
     }
   }
