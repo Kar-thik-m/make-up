@@ -16,15 +16,15 @@ const Testmonials = () => {
         cssEase: "linear",
         responsive: [
             {
-                breakpoint: 768, // Breakpoint for 768px
+                breakpoint: 768, 
                 settings: {
-                    slidesToShow: 1, // Number of slides to show at 768px and below
+                    slidesToShow: 1, 
                 },
             },
         ],
     };
     return (
-        <div className={Tstyle.box}>
+        <div className={Tstyle.box} >
             <div className={Tstyle.top}>
                 <div className={Tstyle.left}>
                     <span>TOP RATED</span>
@@ -43,7 +43,7 @@ const Testmonials = () => {
                     <span>reviewS</span>
                     <div></div>
                 </div>
-                <div className={Tstyle.reviewcard}>
+                <div className={Tstyle.reviewcard} id="reviews">
                     <Slider {...settings} className={Tstyle.l}>
                         {TestimonialsData.map((p) => (
                             <div className={Tstyle.slidecard}>

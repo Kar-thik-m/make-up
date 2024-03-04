@@ -79,6 +79,16 @@
   border-radius: 1rem;
   background-color:rgb(160, 207, 203);
 }
+.clickbutton>button{
+  border: none;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(56, 167, 167);
+}
+.clickbutton>button:hover{
+   color: aliceblue;
+   
+}
 .left>button:hover {
   cursor: pointer;
 }

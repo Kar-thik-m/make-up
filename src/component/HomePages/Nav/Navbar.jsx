@@ -1,5 +1,4 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 
 import Logo from "../../../assets/logo.png"
 import Navstyle from "./Nav.module.css"
@@ -16,8 +15,7 @@ const Nav = () => {
 
     return (
         <>
-
-            <BrowserRouter>
+        <Router>
                 <div className={Navstyle.navcard}>
                     <div className={Navstyle.logo}>
                         <img src={Logo} alt="Logo"></img>
@@ -31,21 +29,22 @@ const Nav = () => {
                         <Link to="/items/k">Orders</Link><hr />
                         <Link to="/items/l">Items</Link><hr />
                         <Link to="/items/kk">Card</Link>
+                       
                     </div>
                 </div>
                 <Routes>
                     <Route index path="" element={<Home />} />
                     <Route path="items" >
-                    <Route path="home" element={<Home />} />
-                        <Route path="i" element={<Category/>} />
+                        <Route path="home" element={<Home />} />
+                        <Route path="i" element={<Category />} />
                         <Route path="k" element="" />
                         <Route path="l" element="" />
                         <Route path="kk" element="" />
-                    
+                       
                     </Route>
                     <Route path="*" element={<div>Not Found</div>} />
-                </Routes>
-            </BrowserRouter>
+                </Routes> 
+            </Router>
         </>
     );
 }

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Istyle from "../Items/Items.module.css";
-import Hero from "../Hero/Hero.jsx";
 
+import Category from "../../Category/category";
 const Item = () => {
+    
     const [data, setData] = useState([]);
     const [filterData, setFilterData] = useState([]);
 
@@ -29,11 +30,16 @@ const Item = () => {
         setData(filtered);
     };
 
+
     return (
-        <div className={Istyle.box}>
+        <div id="items" className={Istyle.box}>
             <div className={Istyle.head}>
                 Our Products
-                <div></div>
+                <div> </div >
+                <span>If You to want see  the better View --    </span>
+               <div className={Istyle.clickbutton}>
+               <button>Click</button>
+               </div>
             </div>
             <div className={Istyle.fullbox}>
                 <div className={Istyle.cardleft}>

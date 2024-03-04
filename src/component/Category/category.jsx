@@ -13,12 +13,12 @@ import Palette from "../../assets/category/Palette.jpeg";
 import Pencil from "../../assets/category/Pencil.jpeg";
 import Powder from "../../assets/category/Powder.jpeg";
 import Liptick from "../../assets/category/liptick.jpeg";
-
 import { useState, useEffect } from "react";
 
 const Category = () => {
     const [data, setData] = useState([]);
     const [filterData, setFilterData] = useState([]);
+    const [addData, setaddData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,6 +27,7 @@ const Category = () => {
                 const responseData = await response.json();
                 setData(responseData);
                 setFilterData(responseData);
+                console.log(responseData)
             } catch (error) {
                 console.log(error);
             }
@@ -39,9 +40,12 @@ const Category = () => {
         const filtered = filterData.filter(product => product.category === category);
         setData(filtered);
     };
-    const add=()=>{
-        
+    const add = (product) => {
+
+        setaddData(product);
+
     }
+    console.log(addData);
 
     return (
         <div className={CatagoryStyle.full}>
@@ -70,9 +74,7 @@ const Category = () => {
                                 <div>{product.brand}</div>
                                 <div>{product.price}{product.price_sign}</div>
                                 <div className={CatagoryStyle.button}>
-                                    <button onClick={add()} >AddCard</button>
-                                    <button >seemore</button>
-                                    <button >Buy</button>
+                                    <button onClick={() => add(product)} >Buy</button>
                                 </div>
                             </div>
                             <div className={CatagoryStyle.right}>
@@ -82,6 +84,7 @@ const Category = () => {
                     </div>
                 ))}
             </div>
+
         </div>
     );
 };
