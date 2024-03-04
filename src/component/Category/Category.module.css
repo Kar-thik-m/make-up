@@ -115,13 +115,12 @@ flex-direction: row;
   }
   .box{
     padding-top: 50%;
+    padding-left: 10%;
   }
   .leftsideFilter>div {
-    padding: 1rem 1rem;
+    padding: 1rem 2rem;
     width: 5rem;
   }
-  .leftsideFilter>div:nth-child(1) {
- align-self: center;
-  }
+ 
 
 }
