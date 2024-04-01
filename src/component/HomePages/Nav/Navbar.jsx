@@ -5,7 +5,7 @@ import Home from "../HomePage";
 import Login from "../../user/login/login";
 import Register from "../../user/register/Register";
 import Category from "../../Category/category";
-import PrivateRoute from "../../../PrivateRoute";
+
 
 const Nav = () => {
   
@@ -15,7 +15,7 @@ const Nav = () => {
         <Router>
                
                 <Routes>
-                <Route index path='/' element={<PrivateRoute element={<Home/>}/>} />
+                <Route index path='/' element={<Login />}/>
                     <Route path="items" >
                         <Route path="home" element={<Home />} />
                         <Route path="i" element={<Category />} />
