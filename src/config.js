@@ -1,0 +1,1 @@
+export const Data="https://makeup-backend-n1ph.onrender.com";

@@ -1,18 +1,10 @@
 import CatagoryStyle from "../Category/Category.module.css";
-import bb_cc from "../../assets/category/bb_cc.jpeg";
-import Concealer from "../../assets/category/Concealer.jpeg";
-import Contour from "../../assets/category/Contour.jpeg";
 import Cream from "../../assets/category/Cream.jpeg";
-import Gel from "../../assets/category/Gel.webp";
-import Highlighter from "../../assets/category/Highlighter.jpeg";
-import lip_gloss from "../../assets/category/lip_gloss.jpeg";
 import liquid from "../../assets/category/liquid.webp";
-import lip_stain from "../../assets/category/lip_stain.jpeg";
-import mineral from "../../assets/category/Mineral.jpeg";
-import Palette from "../../assets/category/Palette.jpeg";
 import Pencil from "../../assets/category/Pencil.jpeg";
 import Powder from "../../assets/category/Powder.jpeg";
 import Liptick from "../../assets/category/liptick.jpeg";
+import { Data } from "../../config";
 import { useState, useEffect } from "react";
 
 const Category = () => {
@@ -23,7 +15,7 @@ const Category = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("https://makeup-api.herokuapp.com/api/v1/products.json");
+                const response = await fetch(`${Data}/product/allitems`);
                 const responseData = await response.json();
                 setData(responseData);
                 setFilterData(responseData);
@@ -53,17 +45,12 @@ const Category = () => {
                 <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("lipstick")} src={Liptick} alt="lipstick" />Lipstick</div>
                 <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("liquid")} src={liquid} alt="liquid" />Liquid</div>
                 <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("powder")} src={Powder} alt="powder" />Powder</div>
-                <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("lip_gloss")} src={lip_gloss} alt="lip_gloss" />lip_gloss</div>
-                <div><img style={{ width: "4rem", borderRadius: "10rem" }} onClick={() => filterItems("gel")} src={Gel} alt="gel" />Gel</div>
+
+                
                 <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("pencil")} src={Pencil} alt="pencil" />Pencil</div>
-                <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("cream")} src={Cream} alt="cream" />Cream</div>
-                <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("palette")} src={Palette} alt="palette" />Palette</div>
-                <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("concealer")} src={Concealer} alt="concealer" />Concealer</div>
-                <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("highlighter")} src={Highlighter} alt="highlighter" />Highlighter</div>
-                <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("bb_cc")} src={bb_cc} alt="bb_cc" />bb_cc</div>
-                <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("contour")} src={Contour} alt="contour" />Contour</div>
-                <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("lip_stain")} src={lip_stain} alt="lip_stain" />lip_stain</div>
-                <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("mineral")} src={mineral} alt="mineral" />Mineral</div>
+                <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("glossier")} src={Cream} alt="cream" />glossier</div>
+
+
             </div>
             <div className={CatagoryStyle.box}>
                 {data.map((product) => (
@@ -78,7 +65,7 @@ const Category = () => {
                                 </div>
                             </div>
                             <div className={CatagoryStyle.right}>
-                                <img src={product.api_featured_image} alt={product.name} />
+                                <img src={product.image} alt={product.name} />
                             </div>
                         </div>
                     </div>

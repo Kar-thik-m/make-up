@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Istyle from "../Items/Items.module.css";
-
+import { Data } from "../../../config";
 import Category from "../../Category/category";
 const Item = () => {
     
     const [data, setData] = useState([]);
     const [filterData, setFilterData] = useState([]);
-
+console.log(filterData)
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("https://makeup-api.herokuapp.com/api/v1/products.json");
+                const response = await fetch(`${ Data }/product/allitems`);
                 const responseData = await response.json();
                 setData(responseData);
                 setFilterData(responseData);
@@ -25,10 +25,7 @@ const Item = () => {
         fetchData();
     }, []);
 
-    const filterItems = (brand) => {
-        const filtered = filterData.filter(product => product.brand==brand);
-        setData(filtered);
-    };
+ 
 
 
     return (
@@ -43,31 +40,19 @@ const Item = () => {
             </div>
             <div className={Istyle.fullbox}>
                 <div className={Istyle.cardleft}>
-                <div><h3>Famous Brands</h3></div><hr/>
-                    <ul>
-                        <li onClick={() => setFilterData(data)}>All</li>
-                        <li onClick={() => filterItems("colourpop")}>colourpop </li>
-                        <li onClick={() => filterItems("rejuva minerals")}>rejuva minerals</li>
-                        <li onClick={() => filterItems("lotus cosmetics usa")}>lotus cosmetics usa</li>
-                        <li onClick={() => filterItems("nyx")}>nyx</li>
-                        <li onClick={() => filterItems("dior")}>dior</li>
-                        <li onClick={() => filterItems("benefit")}>benefit</li>
-                        <li onClick={() => filterItems("clinique")}>clinique</li>
-                        <li onClick={() => filterItems("glossier")}>glossier</li>
-                        
-                    </ul>
+                
                 </div>
                 <div className={Istyle.cardright}>
-                    {data.map((product) => (
+                    {filterData.map((product) => (
                         <div className={Istyle.card} key={product.id}>
                             <div>
                                 <div className={Istyle.left}>
                                     <div>{product.name}</div>
-                                    <div>{product.price}{product.price_sign}</div>
+                                    <div>{product.price}$</div>
                                     <button >show</button>
                                 </div>
                                 <div className={Istyle.right}>
-                                    <img src={product.api_featured_image} alt={product.name} />
+                                    <img src={product.img} alt={product.name} />
                                 </div>
                             </div>
                         </div>
