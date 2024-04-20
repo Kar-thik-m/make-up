@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 const Category = () => {
     const [data, setData] = useState([]);
     const [filterData, setFilterData] = useState([]);
-    const [addData, setaddData] = useState([]);
+    const [addData, setAddData] = useState(null); 
 
     useEffect(() => {
         const fetchData = async () => {
@@ -19,7 +19,6 @@ const Category = () => {
                 const responseData = await response.json();
                 setData(responseData);
                 setFilterData(responseData);
-                console.log(responseData)
             } catch (error) {
                 console.log(error);
             }
@@ -32,12 +31,35 @@ const Category = () => {
         const filtered = filterData.filter(product => product.category === category);
         setData(filtered);
     };
-    const add = (product) => {
 
-        setaddData(product);
+    const buy = async (product) => { 
+        setAddData(product); 
+        const options = {
+            key: "rzp_test_2sglITYoavfAoD",
+            key_secret: "HJQQMjgxahtHetGhOSIeefS0",
+            amount: product.price * 100, 
+            currency: "INR",
+            name: "STARTUP_PROJECTS",
+            description: "for testing purpose",
+            handler: function(response) {
+                alert(response.razorpay_payment_id);
+            },
+            prefill: {
+                name: "Karthik",
+                email: "sparrowkarthik007@gmail.com",
+                contact: "9361238910"
+            },
+            notes: {
+                address: "Razorpay Corporate office"
+            },
+            theme: {
+                color: "#3399cc"
+            }
+        };
 
-    }
-    console.log(addData);
+        const pay = new window.Razorpay(options);
+        pay.open();
+    };
 
     return (
         <div className={CatagoryStyle.full}>
@@ -45,12 +67,8 @@ const Category = () => {
                 <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("lipstick")} src={Liptick} alt="lipstick" />Lipstick</div>
                 <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("liquid")} src={liquid} alt="liquid" />Liquid</div>
                 <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("powder")} src={Powder} alt="powder" />Powder</div>
-
-                
                 <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("pencil")} src={Pencil} alt="pencil" />Pencil</div>
                 <div><img style={{ width: "3rem", borderRadius: "10rem" }} onClick={() => filterItems("glossier")} src={Cream} alt="cream" />glossier</div>
-
-
             </div>
             <div className={CatagoryStyle.box}>
                 {data.map((product) => (
@@ -61,7 +79,7 @@ const Category = () => {
                                 <div>{product.brand}</div>
                                 <div>{product.price}{product.price_sign}</div>
                                 <div className={CatagoryStyle.button}>
-                                    <button onClick={() => add(product)} >Buy</button>
+                                    <button onClick={() => buy(product)}>Buy</button> {/* Pass product as parameter */}
                                 </div>
                             </div>
                             <div className={CatagoryStyle.right}>
@@ -71,7 +89,6 @@ const Category = () => {
                     </div>
                 ))}
             </div>
-
         </div>
     );
 };
